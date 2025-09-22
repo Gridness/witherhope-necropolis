@@ -1,6 +1,6 @@
 services:
   server:
-    image: ghcr.io/gridness/witherhope-necropolis-server:paper-mc-latest
+    image: ghcr.io/gridness/witherhope-necropolis-server:paper-mc-1.21.8
     container_name: paper-server-witherhope-necropolis
     ports:
       - 25565:25565
@@ -15,3 +15,4 @@ services:
       
 volumes:
   witherhope-necropolis-server:
+
