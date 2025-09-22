@@ -1,1 +1,0 @@
-execute store result score players back_switch if entity @e[type=player,team=raider,tag=entrance_puzzle,x=57,y=0,z=-65,distance=..4]

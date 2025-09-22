@@ -1,1 +1,0 @@
-tellraw @a {"color":"red","translate":"witherhope_necropolis.voice_over.velkai.pull_p2","fallback":"Vel'rok: Come, little ones!"}

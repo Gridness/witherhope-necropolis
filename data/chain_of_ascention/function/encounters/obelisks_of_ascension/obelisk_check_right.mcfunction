@@ -1,1 +1,0 @@
-execute store result score players players_within_obelisk_right if entity @e[type=minecraft:player,team=raider,tag=psionic_resonance,tag=obelisk_encounter_started,x=-13,y=1,z=-58,distance=..4]

@@ -1,2 +1,0 @@
-tellraw @a {"color":"light_purple","italic":true,"translate":"witherhope_necropolis.voice_over.whn_entrance.p2","fallback":"The unknown whispers: What you were."}
-schedule function chain_of_ascention:voice_lines/whn_entrance/entrance_unknown_whispers_p3 3s

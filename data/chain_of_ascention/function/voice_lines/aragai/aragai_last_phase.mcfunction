@@ -1,2 +1,0 @@
-playsound minecraft:voice_lines.vo_aragai_last_phase master @a ~ ~ ~
-tellraw @a {"color":"red","fallback":"Aragai: Yes... You are indeed the ones I seek!","translate":"witherhope_necropolis.voice_over.aragai.last_phase"}

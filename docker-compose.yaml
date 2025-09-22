@@ -1,0 +1,17 @@
+services:
+  server:
+    image: ghcr.io/gridness/witherhope-necropolis-server:paper-mc-latest
+    container_name: paper-server-witherhope-necropolis
+    ports:
+      - 25565:25565
+    volumes:
+      - witherhope-necropolis-server:/data
+    restart: always
+    environment:
+      MEMORYSIZE: 4G
+      PAPERMC_FLAGS: --nojline
+    stdin_open: true
+    tty: true
+      
+volumes:
+  witherhope-necropolis-server:
