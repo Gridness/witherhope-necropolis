@@ -1,4 +1,4 @@
-.PHONY: start stop attach stop-force help update
+.PHONY: start stop attach help update uninstall upgrade status
 
 start:
 	docker compose up -d --build
@@ -9,7 +9,7 @@ stop:
 attach:
 	docker attach paper-server-witherhope-necropolis
     
-stop-force:
+uninstall:
 	docker compose down --rmi all --remove-orphans
 
 pull:
@@ -17,5 +17,28 @@ pull:
 
 update: stop pull start
 
+upgrade: update
+
+status:
+	services=$(docker compose ps --services)
+	all_healthy=true
+
+	for service in $services; do
+  		container_id=$(docker compose ps -q $service)
+  		status=$(docker inspect --format='{{.State.Status}}' $container_id)
+  		health=$(docker inspect --format='{{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}' $container_id)
+
+  		if [[ "$status" != "running" ]] || [[ "$health" != "healthy" ]]; then
+    		echo "Service $service is not healthy (status: $status, health: $health)"
+    		all_healthy=false
+  		fi
+	done
+
+	if [ "$all_healthy" = true ]; then
+  		echo "✅ Witherhope Necropolis server is online"
+	else
+  		echo "⚠️ Some services are not healthy. Check status a bit later"
+	fi
+
 help:
-    @echo "Available commands: start, stop, attach, update, stop-force, help"
+    @echo "Available commands: start, stop, attach, update/upgrade, uninstall, status, help"
