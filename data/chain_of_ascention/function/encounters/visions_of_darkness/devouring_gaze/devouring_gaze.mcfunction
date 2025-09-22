@@ -1,3 +1,0 @@
-execute if entity @e[type=player,tag=!devouring_gaze,tag=visions_started] run effect give @a[team=raider] bad_omen 90
-execute if entity @e[type=player,team=raider,tag=!devouring_gaze,tag=visions_started] run tag @a[team=raider] add devouring_gaze
-execute if entity @e[type=player,team=raider,tag=devouring_gaze] run schedule function chain_of_ascention:encounters/visions_of_darkness/devouring_gaze/devouring_gaze_kill 90s
