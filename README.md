@@ -21,6 +21,70 @@ To make your experience as it was intended by the developer, make sure to follow
 If you just want to see your friends suffer...
 - Join _spectator_ team via
 ```
-/team join spectator @p
+/gamemode spectator
 ```
 You will be automatically put in spectator gamemode. All raid mechanics won't affect you at this point
+
+# Configuration
+To enter the raid, you will need to boot up customized paper mc server with several plugins installed and configurations taken from this repo. You have a few options how to boot up the server:
+
+1. Docker Compose with Makefile (*recommended*)
+2. Pure Docker Compose
+3. Docker
+4. Manual configuration (*not recommended*)
+
+## Docker Compose with Makefile (*recommended*)
+This approach is the easiest one and the preferred one: everything needed comes out of the box, (almost) no technical knowledge required. The server comes with pre-configured plugins, saves and encounter configurations
+
+### Requirements
+- `make`
+- `docker`
+
+### Installation
+Follow these steps:
+
+1. Clone the repository
+```bash
+git clone 
+```
+2. In the repo direcotry run
+```bash
+make start
+```
+3. Wait until the server boots up
+4. Check if all components are up (should show healthy status)
+```bash
+make status
+```
+5. You can now enter the server via `<server_ip>:25565`
+
+### Upgrading
+To upgrade simply enter the directory with the cloned repository and run
+```bash
+make update
+```
+or 
+```bash
+make upgrade
+```
+both commands do the same. Then wait until the server boots up: check status with `make status`
+
+### Uninstallation
+To stop the server run
+```bash
+make stop
+```
+To uninstall all components from the system run
+```bash
+make uninstall
+```
+You can run uninstall without stopping the server beforehand: the command will do all the steps neccessary to remove all components of the sever
+
+> ![WARNING]
+> Running this command will also remove all save data from the machine
+
+## Pure Docker Compose
+
+## Docker
+
+## Manual configuration (*not recommended*)
